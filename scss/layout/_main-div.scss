@@ -19,9 +19,23 @@ main {
   // display: flex;
   // flex-direction: column;
   #the-word {
-    height: 100px;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    height: 50px;
     margin-top: $standard-vertical-margin;
     border: 1px solid black;
+    .letter {
+      text-transform: uppercase;
+      margin-right: 10px;
+      border-bottom: 2px solid black;
+      &:last-child {
+        margin-right: 0px;
+      }
+      span {
+        // display: none;
+      }
+    }
   }
   #start-button {
     height: 30px;
