@@ -9,6 +9,8 @@
 // FRONT END
 
 $(document).ready(function() {
+
+  var splitDinoName = [];
   // var exampleInstance = new ExampleModule('args');
   $("#start-button").click(function() {
 
@@ -16,21 +18,30 @@ $(document).ready(function() {
       console.log(responseJSON);
       var toBeSplit = responseJSON[0][0];
       console.log(toBeSplit);
-      var splitDinoName = toBeSplit.toUpperCase().split("");
+      splitDinoName = toBeSplit.toUpperCase().split("");
+      var numberOfLetters = splitDinoName.length;
       console.log(splitDinoName);
+      // for (i=0; i < splitDinoName.length; i++) {
+      //   $('#the-word').append("<div class='letter'></div>")
+      // }
       for (i=0; i < splitDinoName.length; i++) {
-        $('#the-word').append("<div class='letter'><span value=" + splitDinoName[i] + ">" + splitDinoName[i] + "</span></div>")
+        $('#the-word').append("<div class='letter'><span class=" + splitDinoName[i] + ">" + splitDinoName[i] + "</span></div>")
       }
     }).fail(function(error){
       $('#the-word').text("Sorry! Something's not working. :(")
     });
 
-    // $('.letter-button').on(click, function() {
-    //   var clickedLetter = this.val()
-    // })
 
   });
 
+  $('.letter-button').on("click", function() {
+    var clickedLetter = $(this).val()
+    console.log(clickedLetter);
+    if (splitDinoName.includes(clickedLetter)) {
+      console.log($('#the-word span.' + clickedLetter));
+      $('#the-word span.' + clickedLetter).css('visibility', 'visible');
+    }
+  })
 
   // console.log(exampleInstance.examplePrototype());
 });
