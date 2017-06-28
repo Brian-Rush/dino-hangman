@@ -47,10 +47,10 @@
         <button class="letter-button" type="button" value="Y">Y</button>
         <button class="letter-button" type="button" value="Z">Z</button>
       </div>
-      <form class="guess" action="index.html" method="post">
+      <form class="guess">
         <label for="guess"></label>
-        <input type="text" name="guess" value="">
-        <button type="submit" name="button">Guess the Word!</button>
+        <input id="guess" type="text" onkeydown="return (event.keyCode!=32);" name="guess" value="">
+        <button id='guess-button' type="submit" name="button">Guess the Word!</button>
       </form>
     </main>
 
