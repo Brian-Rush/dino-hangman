@@ -1,0 +1,69 @@
+$content-width: 800px;
+$standard-vertical-margin: 20px;
+
+body {
+  width: 100vw;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+}
+
+button {
+  text-transform: uppercase;
+}
+
+main {
+  width: $content-width;
+  overflow: hidden;
+  margin: $standard-vertical-margin auto;
+  // display: flex;
+  // flex-direction: column;
+  #start-button {
+    height: 30px;
+    width: 150px;
+    text-align: center;
+    margin-top: $standard-vertical-margin;
+    margin-bottom: $standard-vertical-margin;
+    padding: 10px;
+    float: right;
+  }
+  div {
+    width: 100%;
+    height: auto;
+    // object-fit: contain;
+    display: flex;
+    justify-content: center;
+    img {
+      width: $content-width;
+    }
+  }
+  .buttons {
+    width: $content-width;
+    display: flex;
+    justify-content: space-between;
+    button {
+      flex-grow: 1;
+      flex-shrink: 1;
+      margin-right: 10px;
+      margin-top: $standard-vertical-margin;
+      margin-bottom: $standard-vertical-margin;
+      height: 30px;
+
+      &:last-child {
+        margin-right: 0px;
+      }
+    }
+  }
+  .guess {
+    display: flex;
+    width: 100%;
+    height: 30px;
+    input {
+      flex-grow: 1;
+      margin-right: 20px;
+    }
+    button {
+      padding: 10px;
+    }
+  }
+}

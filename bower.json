@@ -1,0 +1,17 @@
+{
+  "name": "dino-hangman",
+  "description": "Simple hangman game that uses the Dino Ipsum API to generate the word to be guessed",
+  "main": "index.js",
+  "license": "ISC",
+  "homepage": "",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "jquery": "^3.2.1"
+  }
+}
