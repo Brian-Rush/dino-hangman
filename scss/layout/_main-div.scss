@@ -18,6 +18,11 @@ main {
   margin: $standard-vertical-margin auto;
   // display: flex;
   // flex-direction: column;
+  #the-word {
+    height: 100px;
+    margin-top: $standard-vertical-margin;
+    border: 1px solid black;
+  }
   #start-button {
     height: 30px;
     width: 150px;
@@ -26,6 +31,8 @@ main {
     margin-bottom: $standard-vertical-margin;
     padding: 10px;
     float: right;
+    color: white;
+    background-image: linear-gradient(lightgreen, darkgreen);
   }
   div {
     width: 100%;
