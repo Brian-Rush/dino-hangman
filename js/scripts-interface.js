@@ -23,17 +23,15 @@ var hiddenDisplay = function(output) {
 // FRONT END
 
 $(document).ready(function() {
-  // var exampleInstance = new ExampleModule('args');
   var currentDinoName = new Dino();
 
   $("#start-button").click(function() {
+    $('.congrats').empty();
+    $("input#guess").val("");
 
     currentDinoName.dinoPrototype(hiddenDisplay);
-    // console.log(currentDinoName.word);
-
-
-
   });
+
 
   $('.letter-button').on("click", function() {
     var clickedLetter = $(this).val();
@@ -46,11 +44,12 @@ $(document).ready(function() {
 
   $('.guess').submit(function(event) {
     event.preventDefault();
+    $('.congrats').empty();
     var guessedWord = $('#guess').val().toUpperCase();
     // console.log(guessedWord);
     if (guessedWord == currentDinoName.wordUpper) {
       $('span').css('visibility', 'visible');
-      $('.guess').after("Congrats! You saved a dinosaur from some sicko who wants to hang dinosaurs if random people can't guess words!");
+      $('.congrats').append("Congrats! You saved a dinosaur from some sicko who wants to hang dinosaurs if random people can't guess words!");
     }
   });
 });
