@@ -34,10 +34,15 @@ $(document).ready(function() {
 
 
   $('.letter-button').on("click", function() {
+    var clickedButton = $(this);
     var clickedLetter = $(this).val();
+    var count = 0;
     console.log(clickedLetter);
     if (currentDinoName.word.includes(clickedLetter)) {
       $('#the-word span.' + clickedLetter).css('visibility', 'visible');
+      $(clickedButton).prop("disabled", true);
+    } else {
+      $(clickedButton).prop("disabled", true);
     }
   });
 
@@ -45,8 +50,9 @@ $(document).ready(function() {
   $('.guess').submit(function(event) {
     event.preventDefault();
     $('.congrats').empty();
+    // var wrongAnser = 6;
+    // var count;
     var guessedWord = $('#guess').val().toUpperCase();
-    // console.log(guessedWord);
     if (guessedWord == currentDinoName.wordUpper) {
       $('span').css('visibility', 'visible');
       $('.congrats').append("Congrats! You saved a dinosaur from some sicko who wants to hang dinosaurs if random people can't guess words!");
