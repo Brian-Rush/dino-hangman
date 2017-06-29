@@ -28,6 +28,7 @@ $(document).ready(function() {
   $("#start-button").click(function() {
     $('.congrats').empty();
     $("input#guess").val("");
+    $('.letter-button').prop("disabled", false);
 
     currentDinoName.dinoPrototype(hiddenDisplay);
   });
@@ -42,7 +43,7 @@ $(document).ready(function() {
       $('#the-word span.' + clickedLetter).css('visibility', 'visible');
       $(clickedButton).prop("disabled", true);
     } else {
-      $(clickedButton).prop("disabled", true);
+      $(clickedButton).prop("disabled", true).attr("class", "letter-button wrong");
     }
   });
 
