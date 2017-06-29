@@ -1,10 +1,37 @@
+// var displayWord = require('./../js/scripts-interface.js').displayWordModule;
 //business logic stuff for a particular module
-var ExampleModule = function(args) {
-  this.args = args; //to be replaced with constructor arguments
+
+function Dino() {
+  // this.word;
+}
+
+Dino.prototype.dinoPrototype = function(hiddenDisplay) {
+  // var splitDinoName = [];
+  var toBeSplit = "";
+  // var that = this;
+  var result;
+
+  $.get('http://dinoipsum.herokuapp.com/api/?format=json&paragraphs=1&words=1').then((responseJSON) => {
+
+    splitWord = responseJSON[0][0].toUpperCase().split("");
+    wordUpper = responseJSON[0][0].toUpperCase();
+    // var numberOfLetters = this.word.length;
+    this.word = splitWord;
+    this.wordUpper = wordUpper;
+
+    hiddenDisplay(splitWord);
+  });
+
+  // .fail(function(){
+  //   failerror();
+  // });
+
+
+
 };
 
-ExampleModule.prototype.examplePrototype = function() {
-  return `this is an example prototype method`;
-};
+// Dino.prototype.foo = function(x){
+//   this.word = x;
+// }
 
-exports.exampleModule = ExampleModule;
+exports.dinoModule = Dino;
