@@ -22,18 +22,26 @@ main {
     display: flex;
     flex-direction: row;
     justify-content: space-around;
+    align-items: center;
     height: 50px;
     margin-top: $standard-vertical-margin;
-    border: 1px solid black;
+    // border: 1px solid black;
     .letter {
-      text-transform: uppercase;
       margin-right: 10px;
       border-bottom: 2px solid black;
+      border-top: 2px solid transparent;
       &:last-child {
         margin-right: 0px;
       }
+      div {
+        display: flex;
+        align-items: stretch;
+        height: 50px;
+        background-color: green;
+      }
       span {
         visibility: hidden;
+        align-self: center;
       }
     }
   }
